@@ -49,4 +49,16 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # Sets up stubs for all tests
+  config.before(:each) do
+    @address = '1600+Pennsylvania+Ave+NW'
+    maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@address}"
+    stub_request(:any, maps_url).to_return(body: File.new('spec/maps_response_body.txt'), status: 200)
+
+    @lat = '38.8976757'
+    @lng = '-77.03652799999999'
+    forecasts_url = "https://api.forecast.io/forecast/1eca96eac95b937d4da06737228bb716/#{@lat},#{@lng}"
+    stub_request(:any, forecasts_url).to_return(body: File.new('spec/forecasts_response_body.txt'), status: 200)
+  end
 end
