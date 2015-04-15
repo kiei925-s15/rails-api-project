@@ -10,7 +10,7 @@ First **fork** and *then* clone this repository.
 
     rails server
 
-If it worked, you should be able to navigate to [http://localhost:3000](http://localhost:3000) and see something there. If it didn't work, make sure you don't have any old servers running in other tabs or windows.
+If it worked, you should be able to navigate to [http://localhost:3000](http://localhost:3000) and see something there. If it didn't work, make sure you don't have any old servers running in other tabs or windows. **Ctrl-C** to shut down running Rails servers.
 
 ## Goal:
 
@@ -21,7 +21,7 @@ As described on the application's [home page](http://localhost:3000), I want you
 
 In order to do this, you will need to first complete the RCAV for that URL (I started it off in `routes.rb`).
 
-Then, in your `ForecastsController` file, add the following to the top:
+Then, in your `ForecastsController` file, add the following to the very top:
 
     require 'open-uri'
     require 'json'
@@ -44,9 +44,11 @@ I should see something like
 
 > The current temperature at **5807+S+Woodlawn+Ave** is **46.6** degrees.
 >
-> The outlook for the next hour is: **Clear for the hour.**
+> The outlook for the next 60 minutes is: **Clear for the hour.**
 >
-> The outlook for the next day is: **Mostly cloudy starting tomorrow morning.**
+> The outlook for the next 24 hours is: **Mostly cloudy starting tomorrow morning.**
+> The outlook for the rest of the week is: **No precipitation throughout the week, with temperatures rising to 64°F on Saturday.**
+
 
 #### For fun, optional exercises
 
