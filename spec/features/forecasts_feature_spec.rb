@@ -18,18 +18,21 @@ RSpec.describe 'Forecasts feature', type: :feature do
       end
 
       it "displays the next hour's outlook for the :address", points: 5 do
-        outlook = 'Partly Cloudy'
-        expect(page).to have_content(/#{Regexp.quote(outlook)}/i)
+        outlook1 = 'Partly Cloudy'
+        outlook2 = 'Partly cloudy for the hour'
+        expect(page).to have_content(/#{Regexp.quote(outlook1)}|#{Regexp.quote(outlook2)}/i)
       end
 
       it "displays the next day's outlook for the :address", points: 5 do
-        outlook = 'Mostly cloudy throughout the day'
-        expect(page).to have_content(/#{Regexp.quote(outlook)}/i)
+        outlook1 = 'Mostly cloudy throughout the day'
+        outlook2 = 'Mixed precipitation starting tomorrow morning, continuing until tomorrow afternoon'
+        expect(page).to have_content(/#{Regexp.quote(outlook1)}|#{Regexp.quote(outlook2)}/i)
       end
 
       it "displays the next week's outlook for the :address", points: 5 do
-        outlook = 'Light rain tomorrow through Saturday, with temperatures peaking at 69°F on Thursday'
-        expect(page).to have_content(/#{Regexp.quote(outlook)}/i)
+        outlook1 = 'Light rain tomorrow through Saturday, with temperatures peaking at 69°F on Thursday'
+        outlook2 = 'Light rain tomorrow through Saturday, with temperatures peaking at 69°F on Thursday'
+        expect(page).to have_content(/#{Regexp.quote(outlook1)}|#{Regexp.quote(outlook2)}/i)
       end
     end
 
