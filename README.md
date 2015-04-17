@@ -47,6 +47,7 @@ I should see something like
 > The outlook for the next 60 minutes is: **Clear for the hour.**
 >
 > The outlook for the next 24 hours is: **Mostly cloudy starting tomorrow morning.**
+>
 > The outlook for the rest of the week is: **No precipitation throughout the week, with temperatures rising to 64°F on Saturday.**
 
 
