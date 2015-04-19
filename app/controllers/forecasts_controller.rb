@@ -22,6 +22,6 @@ class ForecastsController < ApplicationController
 	@the_week_outlook = parsed_weather_data["daily"]["summary"]
   end
 
-  # def home
-  # end
+  def home
+  end
 end
