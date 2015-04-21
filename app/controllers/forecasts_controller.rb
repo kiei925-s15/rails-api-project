@@ -23,8 +23,9 @@ class ForecastsController < ApplicationController
         parsed_data2 = JSON.parse(raw_data2)
 
         @the_temperature = parsed_data2["currently"]["temperature"]
-        @the_hour_outlook = parsed_data2["hourly"]["summary"]
-        @the_day_outlook = parsed_data2["daily"]["summary"]
+        @the_hour_outlook = parsed_data2["minutely"]["summary"]
+        @the_day_outlook = parsed_data2["hourly"]["summary"]
+        @the_week_outlook = parsed_data2["daily"]["summary"]
 
         render 'location'
     end
