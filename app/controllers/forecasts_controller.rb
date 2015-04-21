@@ -27,17 +27,8 @@ class ForecastsController < ApplicationController
         @the_day_outlook = parsed_data2["hourly"]["summary"]
         @the_week_outlook = parsed_data2["daily"]["summary"]
 
+        @clean_address = params["address"].gsub("+"," ")
+
         render 'location'
     end
 end
-
-
-  #def sign
-   # @zodiac = Zodiac.find_by({:sign => params["the_sign"] })
- # end
-
- # street_address = gets.chomp
- # url_safe_street_address = URI.encode(street_address)
-
-
-
