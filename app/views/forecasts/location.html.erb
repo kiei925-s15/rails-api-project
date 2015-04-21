@@ -1,0 +1,13 @@
+<h1>What location would you like to know the weather for?</h1>
+
+street_address = gets.chomp
+
+url_safe_street_address = URI.encode(street_address)
+
+url_of_data_we_want = "https://maps.googleapis.com/maps/api/geocode/json?address=street_address"
+
+raw_data = open(url_of_data_we_want).read
+
+parsed_data = JSON.parse(raw_data)
+
+
