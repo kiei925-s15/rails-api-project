@@ -1,7 +1,11 @@
 class ForecastsController < ApplicationController
-  def address
-    @location = Location.find_by({ :forecasts => params["address" ]})
+
+
+  def location
+    #render('forecasts/location')
+    @address = params[:address]
   end
+
 end
 
 
