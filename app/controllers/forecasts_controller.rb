@@ -13,10 +13,10 @@ class ForecastsController < ApplicationController
 
   def location
 
-@street_address = {:location => params["address"]}
-url_safe_street_address = URI.encode(street_address)
+  @street_address = {:location => params["address"]}.to_s
+  url_safe_street_address = URI.encode(@street_address)
 
-url_of_data_we_want = "http://maps.googleapis.com/maps/api/geocode/json?address="+ url_safe_street_address
+  url_of_data_we_want = "http://maps.googleapis.com/maps/api/geocode/json?address="+ url_safe_street_address
 raw_data = open(url_of_data_we_want).read
 parsed_data = JSON.parse(raw_data)
 
@@ -29,10 +29,10 @@ url_of_forecast = "https://api.forecast.io/forecast/8df5e9a5877dc0f314a7795f78b8
 raw_dataf = open(url_of_forecast).read
 parsed_dataf = JSON.parse(raw_dataf)
 
-the_temperature = parsed_dataf["currently"]["temperature"]
-the_hour_outlook = parsed_dataf["minutely"]["summary"]
-the_day_outlook = parsed_dataf["hourly"]["summary"]
-the_week_outlook = parsed_dataf["daily"]["summary"]
+@the_temperature = parsed_dataf["currently"]["temperature"]
+@the_hour_outlook = parsed_dataf["minutely"]["summary"]
+@the_day_outlook = parsed_dataf["hourly"]["summary"]
+@the_week_outlook = parsed_dataf["daily"]["summary"]
 
 render 'location'
 

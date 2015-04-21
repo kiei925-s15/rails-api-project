@@ -1,4 +1,4 @@
-<%= puts "The current temperature at #{street_address} is #{the_temperature} degrees." %>
-<%= puts "The outlook for the next hour is: #{the_hour_outlook}" %>
-<%= puts "The outlook for the next day is: #{the_day_outlook}" %>
-<%= puts "The outlook for the rest of the week is: #{the_week_outlook}" %>
+<h1>The current temperature at <%= params["address"]%> is: <%= @the_temperature %> degrees<h1>
+<h1>The outlook for the next hour is: <%= @the_hour_outlook%><h1>
+<h1> The outlook for the next day is: <%= @the_day_outlook%><h1>
+<h1> The outlook for the rest of the week is: <%= @the_week_outlook%><h1>
