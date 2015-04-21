@@ -1,4 +1,3 @@
-
 require 'open-url'
 require 'json'
 # require 'openssl'
