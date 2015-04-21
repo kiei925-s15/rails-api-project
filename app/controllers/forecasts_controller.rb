@@ -19,6 +19,7 @@ class ForecastsController < ApplicationController
     @the_temperature = parsed_data2["currently"]["temperature"]
     @the_hour_outlook = parsed_data2["hourly"]["data"][1]["summary"]
     @the_day_outlook = parsed_data2["daily"]["data"][1]["summary"]
+    @the_week_outlook = parsed_data2["daily"]["summary"]
   end
 
 end
